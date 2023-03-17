@@ -1,0 +1,52 @@
+﻿<Window x:Class="MidtermWinter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MidtermWinter"
+        mc:Ignorable="d"
+        Title="Tenant Tracker" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFFFA0DD" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Canvas Background="#FFEFC6EA" Margin="295,55,261,33">
+            <Label Content="    First Name; " Canvas.Left="68" Canvas.Top="10" Height="27" Width="110" Background="#FF150000" Foreground="#FFFF3FC3" FontWeight="Bold" FontFamily="Century Gothic" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="    Last Name: " Canvas.Left="68" Canvas.Top="79" Height="27" Width="110" Background="#FF150000" Foreground="#FFFF3FC3" FontWeight="Bold" FontFamily="Century Gothic" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="   Monthly Payment" Canvas.Left="56" Canvas.Top="145" Height="27" Width="133" Background="#FF150000" Foreground="#FFFF3FC3" FontWeight="Bold" FontFamily="Century Gothic" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="    Number of Bedrooms" Canvas.Left="46" Canvas.Top="210" Height="27" Width="154" Background="#FF150000" Foreground="#FFFF3FC3" FontWeight="Bold" FontFamily="Century Gothic" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtFirstName" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="42" Width="166" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28"/>
+            <TextBox x:Name="txtLastName" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="111" Width="166" Height="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtMontlhlyPayment" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="177" Width="166" Height="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtNumofBedrooms" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="237" Width="166" Height="28" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="btnRemove" Content="Remove" Canvas.Left="57" Canvas.Top="316" HorizontalAlignment="Left" VerticalAlignment="Center" Width="132" Click="btnRemove_Click"/>
+            <Button x:Name="btnAddUpdate" Content="Add / Update Tenant" Canvas.Left="27" Canvas.Top="284" HorizontalAlignment="Left" VerticalAlignment="Center" Width="192" Click="btnAddUpdate_Click"/>
+        </Canvas>
+        <RichTextBox Margin="557,10,10,201">
+            <FlowDocument>
+                <Paragraph>
+                    <Run x:Name="runDisplay"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Canvas Margin="557,292,13,12">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF76FF1B" Offset="0.414"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Label Content="PAYMENT" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108"/>
+            <TextBox x:Name="txtPayment" TextWrapping="Wrap" Canvas.Top="31" Width="166" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Canvas.Left="32"/>
+            <Button Content="Paid Fully" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Center" Width="92" Click="Button_Click"/>
+            <Button Content="Partially Paid" Canvas.Top="100" Width="92" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="138" Click="Button_Click_1"/>
+        </Canvas>
+
+        <ListBox x:Name="lbUnits" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="6,227,524,10" SelectionChanged="ListBox_SelectionChanged"/>
+        <Image Margin="-2,10,517,209" Source="/MarkTag.jpg" Stretch="Fill"/>
+
+    </Grid>
+</Window>
